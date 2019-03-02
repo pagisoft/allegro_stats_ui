@@ -2,6 +2,7 @@ import {AfterViewInit, Component, HostBinding, HostListener, OnInit} from '@angu
 import {ResizeService} from '../../resize/resize.service';
 import {routerAnimation} from '../../utils/page.animation';
 import {TranslateService} from '@ngx-translate/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -40,7 +41,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   ];
   lang: string;
 
-  constructor(public resizeService: ResizeService, private translateService: TranslateService) {
+  constructor(public resizeService: ResizeService, private translateService: TranslateService, private router: Router) {
     this.onResize();
   }
 
@@ -83,5 +84,9 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   changeLanguage(ln: string) {
     this.translateService.use(ln);
     this.lang = this.translateService.currentLang;
+  }
+
+  logout() {
+    this.router.navigateByUrl('login');
   }
 }
