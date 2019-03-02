@@ -83,7 +83,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
 
   changeLanguage(ln: string) {
     this.translateService.use(ln);
-    this.lang = this.translateService.currentLang;
+    this.lang = ln;
   }
 
   logout() {
