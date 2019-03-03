@@ -3,6 +3,7 @@ import {ResizeService} from '../../resize/resize.service';
 import {routerAnimation} from '../../utils/page.animation';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from '@angular/router';
+import {CategoriesService} from '../../service/categories.service';
 
 @Component({
   selector: 'app-main-page',
@@ -41,7 +42,8 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   ];
   lang: string;
 
-  constructor(public resizeService: ResizeService, private translateService: TranslateService, private router: Router) {
+  constructor(public resizeService: ResizeService, private translateService: TranslateService, private router: Router,
+  private categoriesService: CategoriesService) {
     this.onResize();
   }
 
