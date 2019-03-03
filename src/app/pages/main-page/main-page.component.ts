@@ -91,4 +91,11 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   logout() {
     this.router.navigateByUrl('login');
   }
+
+  getCategories() {
+    this.categoriesService.getCategories().subscribe(
+      response => {
+        console.log(response);
+      });
+  }
 }

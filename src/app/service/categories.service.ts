@@ -9,11 +9,10 @@ export class CategoriesService implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:8080/categories').subscribe(
-      response => {
-        console.log(response);
-      }
-    );
+  }
+
+  getCategories() {
+    return this.httpClient.get('http://localhost:8080/categories');
   }
 
 }
