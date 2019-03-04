@@ -42,8 +42,7 @@ export class MainPageComponent implements OnInit, AfterViewInit {
   ];
   lang: string;
 
-  constructor(public resizeService: ResizeService, private translateService: TranslateService, private router: Router,
-  private categoriesService: CategoriesService) {
+  constructor(public resizeService: ResizeService, private translateService: TranslateService, private router: Router) {
     this.onResize();
   }
 
@@ -90,12 +89,5 @@ export class MainPageComponent implements OnInit, AfterViewInit {
 
   logout() {
     this.router.navigateByUrl('login');
-  }
-
-  getCategories() {
-    this.categoriesService.getCategories().subscribe(
-      response => {
-        console.log(response);
-      });
   }
 }

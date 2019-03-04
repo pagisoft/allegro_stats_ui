@@ -42,7 +42,9 @@ import {PortfolioPageComponent} from '../pages/portfolio-page/portfolio-page.com
 import {PageNotFoundComponent} from '../pages/page-not-found/page-not-found.component';
 import {LoginPageComponent} from '../pages/login-page/login-page.component';
 import {SignUpPageComponent} from '../pages/sign-up-page/sign-up-page.component';
-import {MultiLanguagePageComponent} from '../pages/multi-language-page/multi-language-page.component';2
+import {MultiLanguagePageComponent} from '../pages/multi-language-page/multi-language-page.component';
+import {CategoriesSelectorComponent} from "../pages/categories-selector/categories-selector.component";
+2
 
 const APP_ROUTES: Routes = [
   {
@@ -98,6 +100,7 @@ const APP_ROUTES: Routes = [
   {path: '404', component: PageNotFoundComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'sign-up', component: SignUpPageComponent},
+  {path: 'categories-selection', component: CategoriesSelectorComponent},
   {path: '', redirectTo: '/main/dashboard', pathMatch: 'prefix'},
   {path: '**', redirectTo: '/main/dashboard', pathMatch: 'prefix'}
 ];

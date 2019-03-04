@@ -98,6 +98,8 @@ import {
 } from '@angular/material';
 import {PortalModule} from '@angular/cdk/portal';
 import {NgxEchartsModule} from 'ngx-echarts';
+import { CategoriesSelectorComponent } from './pages/categories-selector/categories-selector.component';
+import {TreeModule} from "angular-tree-component";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
 
@@ -127,7 +129,8 @@ export function createTranslateLoader(http: HttpClient) {
     CartPageComponent,
     ProductPageComponent,
     PortfolioPageComponent,
-    MultiLanguagePageComponent
+    MultiLanguagePageComponent,
+    CategoriesSelectorComponent
   ],
   entryComponents: [
     DialogExampleComponent, CartButtonComponent
@@ -178,6 +181,7 @@ export function createTranslateLoader(http: HttpClient) {
     CovalentCommonModule,
     ResizeModule,
     HttpClientModule,
+    TreeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
