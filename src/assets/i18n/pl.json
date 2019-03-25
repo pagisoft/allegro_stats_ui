@@ -19,5 +19,11 @@
   "Profile": "Profil",
   "Sign out": "Wyloguj się",
   "Polish": "Polski",
-  "English": "Angielski"
+  "English": "Angielski",
+  "Select category": "Wybierz kategorię",
+  "Select subcategory": "Wybierz podkategorię",
+  "Any category": "Dowolna kategoria",
+  "Any subcategory": "Dowolna podkategoria",
+  "Clear": "Wyczyść",
+  "Lock": "Zablokuj"
 }

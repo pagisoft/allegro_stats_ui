@@ -1,0 +1,73 @@
+<section fxLayout="column" fxLayout.gt-md="row">
+
+  <div fxFlex="1 0 auto" fxFlex.gt-md="75">
+    <mat-card>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+          <h5 class="font-w-light secondary-text-color">{{'Categories' | translate}}</h5>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div fxFlex="1 0 auto" fxFlex.gt-md="25" fxLayout="column" fxLayout.gt-sm="row">
+    <div fxFlex="1 0 auto" fxFlex.gt-sm="100">
+        <mat-card>
+
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+              <h5 class="font-w-light secondary-text-color">{{'Categories' | translate}}</h5>
+            </div>
+            <div>
+              <button mat-icon-button [matMenuTriggerFor]="menuCategories">
+                <mat-icon class="secondary-text-color">more_vert</mat-icon>
+              </button>
+            </div>
+          </div>
+
+          <mat-card-content>
+
+            <!-- Root level -->
+            <mat-form-field style="width: 100%">
+              <mat-label>{{'Select category' | translate}}</mat-label>
+              <mat-select [(ngModel)]="selectedRootCategory" (selectionChange)="rootCategorySelected($event)">
+                <mat-option value="-1"> - {{'Any category' | translate}} - </mat-option>
+                <mat-option *ngFor="let category of rootCategories | async " [value]="category">
+                  {{ category.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- First level -->
+            <mat-form-field *ngIf="showSubCategory(selectedRootCategory)" style="width: 100%">
+              <mat-label>{{'Select subcategory' | translate}}</mat-label>
+              <mat-select [(ngModel)]="selectedFirstLevelCategory" (selectionChange)="firstLevelCategorySelected($event)">
+                <mat-option value="-1"> - {{'Any subcategory' | translate}} - </mat-option>
+                <mat-option *ngFor="let category of firstLevelCategories | async " [value]="category">
+                  {{ category.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- Second level -->
+            <mat-form-field *ngIf="showSubCategory(selectedFirstLevelCategory)" style="width: 100%">
+              <mat-label>{{'Select subcategory' | translate}}</mat-label>
+              <mat-select [(ngModel)]="selectedSecondLevelCategory" (selectionChange)="secondLevelCategorySelected($event)">
+                <mat-option value="-1"> - {{'Any subcategory' | translate}} - </mat-option>
+                <mat-option *ngFor="let category of secondLevelCategories | async " [value]="category">
+                  {{ category.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </mat-card-content>
+
+        </mat-card>
+    </div>
+  </div>
+</section>
+
+<mat-menu #menuCategories="matMenu" xPosition="before" yPosition="below">
+  <button mat-menu-item (click)="clear()"><mat-icon>refresh</mat-icon> {{'Clear' | translate}}</button>
+  <button mat-menu-item (click)="lock()"><mat-icon>lock_outline</mat-icon> {{'Lock' | translate}}</button>
+</mat-menu>

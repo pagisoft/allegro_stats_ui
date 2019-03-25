@@ -43,8 +43,10 @@ import {PageNotFoundComponent} from '../pages/page-not-found/page-not-found.comp
 import {LoginPageComponent} from '../pages/login-page/login-page.component';
 import {SignUpPageComponent} from '../pages/sign-up-page/sign-up-page.component';
 import {MultiLanguagePageComponent} from '../pages/multi-language-page/multi-language-page.component';
-import {CategoriesSelectorComponent} from "../pages/categories-selector/categories-selector.component";
-2
+import {CategoriesSelectorComponent} from '../pages/categories-selector/categories-selector.component';
+import {CategoriesComponent} from '../pages/categories/categories.component';
+import {KeywordsComponent} from '../pages/keywords/keywords.component';
+
 
 const APP_ROUTES: Routes = [
   {
@@ -93,6 +95,8 @@ const APP_ROUTES: Routes = [
     {path: 'cart', component: CartPageComponent},
     {path: 'portfolio', component: PortfolioPageComponent},
     {path: 'multi-language', component: MultiLanguagePageComponent},
+    {path: 'categories', component: CategoriesComponent},
+    {path: 'keywords', component: KeywordsComponent},
     {path: '', redirectTo: 'dashboard', pathMatch: 'prefix'},
     {path: '**', redirectTo: 'dashboard', pathMatch: 'prefix'}
   ]

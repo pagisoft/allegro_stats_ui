@@ -94,12 +94,15 @@ import {
   MatSnackBarModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTreeModule
 } from '@angular/material';
 import {PortalModule} from '@angular/cdk/portal';
 import {NgxEchartsModule} from 'ngx-echarts';
 import { CategoriesSelectorComponent } from './pages/categories-selector/categories-selector.component';
 import {TreeModule} from "angular-tree-component";
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { KeywordsComponent } from './pages/keywords/keywords.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {};
 
@@ -130,7 +133,9 @@ export function createTranslateLoader(http: HttpClient) {
     ProductPageComponent,
     PortfolioPageComponent,
     MultiLanguagePageComponent,
-    CategoriesSelectorComponent
+    CategoriesSelectorComponent,
+    CategoriesComponent,
+    KeywordsComponent
   ],
   entryComponents: [
     DialogExampleComponent, CartButtonComponent
@@ -182,6 +187,7 @@ export function createTranslateLoader(http: HttpClient) {
     ResizeModule,
     HttpClientModule,
     TreeModule,
+    MatTreeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
