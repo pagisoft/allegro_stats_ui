@@ -4,10 +4,20 @@
     <mat-card>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>
-          <h5 class="font-w-light secondary-text-color">{{'Categories' | translate}}</h5>
+          <h5 class="font-w-light secondary-text-color">{{'Report' | translate}}</h5>
         </div>
       </div>
     </mat-card>
+
+
+    <mat-card>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+          <h5 class="font-w-light secondary-text-color">{{'Sales by day' | translate}}</h5>
+        </div>
+      </div>
+    </mat-card>
+
   </div>
 
   <div fxFlex="1 0 auto" fxFlex.gt-md="25" fxLayout="column" fxLayout.gt-sm="row">
@@ -16,7 +26,7 @@
 
           <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>
-              <h5 class="font-w-light secondary-text-color">{{'Categories' | translate}}</h5>
+              <h5 class="font-w-light secondary-text-color">{{'Select category' | translate}}</h5>
             </div>
             <div>
               <button mat-icon-button [matMenuTriggerFor]="menuCategories">
